@@ -1,4 +1,4 @@
-package com.example.tasks.ui.share
+package com.example.tasks.tasks.share
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
