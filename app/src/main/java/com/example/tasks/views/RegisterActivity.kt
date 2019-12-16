@@ -1,7 +1,8 @@
-package com.example.tasks
+package com.example.tasks.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tasks.R
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -16,6 +17,6 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun handleSave() {
-        
+
     }
 }
