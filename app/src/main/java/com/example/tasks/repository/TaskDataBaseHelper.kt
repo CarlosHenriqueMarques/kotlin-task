@@ -9,15 +9,15 @@ class TaskDataBaseHelper (context: Context) : SQLiteOpenHelper(context, DATABASE
     DATABASE_VERSION) {
 
     companion object {
-        private val DATABASE_VERSION = 1
+        private val DATABASE_VERSION = 2
         private val DATABASE_NAME = "task.db"
     }
 
     private val createTableUser = """
        CREATE TABLE ${DataBaseConstant.USER.TABLE_NAME}(
          ${DataBaseConstant.USER.COLUMNS.ID} INTEGER PRIMARY KEY AUTOINCREMENT,
-         ${DataBaseConstant.USER.COLUMNS.NAME} TEXT
-         ${DataBaseConstant.USER.COLUMNS.EMAIL} TEXT
+         ${DataBaseConstant.USER.COLUMNS.NAME} TEXT,
+         ${DataBaseConstant.USER.COLUMNS.EMAIL} TEXT,
          ${DataBaseConstant.USER.COLUMNS.PASSWROD} TEXT
     )"""
 
@@ -25,6 +25,7 @@ class TaskDataBaseHelper (context: Context) : SQLiteOpenHelper(context, DATABASE
 
     override fun onCreate(sqlLite: SQLiteDatabase?) {
         sqlLite?.execSQL(createTableUser)
+       // sqlLite?.execSQL(deleteDataBaseUser)
     }
 
     override fun onUpgrade(sqlLite: SQLiteDatabase?, p1: Int, p2: Int) {
