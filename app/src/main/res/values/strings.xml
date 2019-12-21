@@ -17,4 +17,6 @@
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="informe_todos_camspo">Informe todos os campos</string>
+    <string name="erro_inesperado">Erro inesperado</string>
 </resources>
