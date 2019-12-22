@@ -42,7 +42,7 @@ class UserRepository private constructor(context : Context){
                                         DataBaseConstant.USER.COLUMNS.PASSWROD)
 
 
-            val selection = "${DataBaseConstant.USER.COLUMNS.EMAIL} = ? AND ${DataBaseConstant.USER.COLUMNS.PASSWROD}"
+            val selection = "${DataBaseConstant.USER.COLUMNS.EMAIL} = ? AND ${DataBaseConstant.USER.COLUMNS.PASSWROD} = ?"
             val selectionArgs = arrayOf(email,password)
             cursor = db.query(DataBaseConstant.USER.TABLE_NAME,projection,selection,selectionArgs,null,null,null)
 
