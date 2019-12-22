@@ -5,19 +5,10 @@ import android.content.Context
 import android.database.Cursor
 import com.example.tasks.constants.DataBaseConstant
 import com.example.tasks.entities.UserEntity
+import com.example.tasks.util.SecurityPreferences
 
 class UserRepository private constructor(context : Context){
     private var mTaskDataBaseHelper : TaskDataBaseHelper = TaskDataBaseHelper(context)
-
-    companion object{
-        fun getInstance (context: Context): UserRepository {
-            if (INSTANCE == null){
-                INSTANCE = UserRepository(context)
-            }
-            return INSTANCE as UserRepository
-        }
-        private var INSTANCE : UserRepository? = null
-    }
 
     fun insert(name: String, email : String, password: String) : Int{
         val db = mTaskDataBaseHelper.writableDatabase
@@ -83,6 +74,16 @@ class UserRepository private constructor(context : Context){
         return ret
 
         //db.rawQuery("select * from user where email == gabriel", null)
+    }
+
+    companion object{
+        fun getInstance (context: Context): UserRepository {
+            if (INSTANCE == null){
+                INSTANCE = UserRepository(context)
+            }
+            return INSTANCE as UserRepository
+        }
+        private var INSTANCE : UserRepository? = null
     }
 
 }
