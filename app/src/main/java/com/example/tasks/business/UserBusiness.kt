@@ -18,6 +18,9 @@ class UserBusiness (val context: Context) {
             if(name == "" || email == "" || password == ""){
                 throw ValidationException(context.getString(R.string.informe_todos_camspo))
             }
+            if(mUserRepository.isEmailExistent(email)){
+                throw ValidationException(context.getString(R.string.email_em_uso))
+            }
             val userid = mUserRepository.insert(name,email,password)
         }catch (ex : Exception){
             throw ex

@@ -19,4 +19,5 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="informe_todos_camspo">Informe todos os campos</string>
     <string name="erro_inesperado">Erro inesperado</string>
+    <string name="email_em_uso">Email já em uso. Informe outro por favor !!</string>
 </resources>
