@@ -1,22 +1,28 @@
 package com.example.tasks.views
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import android.view.MenuItem
-import androidx.core.view.GravityCompat
 import com.example.tasks.R
+import com.example.tasks.constants.TaskConstants
+import com.example.tasks.util.SecurityPreferences
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var mSecurityPreferences: SecurityPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +50,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        mSecurityPreferences = SecurityPreferences(this)
+        setNavigationViewListener()
+
+    }
+
+    private fun setNavigationViewListener() {
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener(this)
     }
 
     /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -64,11 +79,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }else if (id == R.id.nav_todo){
 
         }else if(id == R.id.nav_logout){
-
+            handleLogout()
         }
-
-        val drawer = R.id.drawer_layout as DrawerLayout
-        drawer.closeDrawer(GravityCompat.START)
+        drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun handleLogout() {
+        mSecurityPreferences.removeStoreString(TaskConstants.KEY.USER_ID)
+        mSecurityPreferences.removeStoreString(TaskConstants.KEY.USER_NAME)
+        mSecurityPreferences.removeStoreString(TaskConstants.KEY.USER_EMAIL)
+
+        startActivity(Intent(this,LoginActivity::class.java))
+        finish()
     }
 }
