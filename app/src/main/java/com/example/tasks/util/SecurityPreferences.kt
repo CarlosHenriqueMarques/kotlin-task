@@ -14,6 +14,6 @@ class SecurityPreferences (context: Context) {
         return mSharedPreferences.getString(key,"")
     }
     fun removeStoreString(key : String){
-        mSharedPreferences.edit().remove().apply()
+        mSharedPreferences.edit().remove(key).apply()
     }
 }
