@@ -22,4 +22,7 @@
     <string name="email_em_uso">Email já em uso. Informe outro por favor !!</string>
     <string name="entrar">Entrar</string>
     <string name="user_password_incorret">Usuário e/ou senha incorretos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

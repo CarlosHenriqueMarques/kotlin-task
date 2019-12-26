@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -30,11 +31,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        /*val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }*/
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -54,6 +50,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mSecurityPreferences = SecurityPreferences(this)
         setNavigationViewListener()
 
+        startDefaultFragment()
     }
 
     private fun setNavigationViewListener() {
@@ -61,28 +58,32 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }*/
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
+        var fragment : Fragment? = null
         val id = menu.itemId
         if(id == R.id.nav_home){
-
+            fragment = TaskListFragment.newInstance()
         }else if (id == R.id.nav_todo){
-
+            fragment = TaskListFragment.newInstance()
         }else if(id == R.id.nav_logout){
             handleLogout()
         }
+
+        val fragmentManager = supportFragmentManager
+        fragment?.let { fragmentManager.beginTransaction().replace(R.id.frameContent, it).commit() }
+
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun startDefaultFragment() {
+        val fragment : Fragment = TaskListFragment.newInstance()
+        supportFragmentManager.beginTransaction().replace(R.id.frameContent, fragment).commit()
     }
 
     private fun handleLogout() {
