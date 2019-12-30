@@ -4,7 +4,6 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import com.example.tasks.constants.DataBaseConstant
-import com.example.tasks.entities.PriorityEntity
 import com.example.tasks.entities.TaskEntity
 import java.lang.Exception
 

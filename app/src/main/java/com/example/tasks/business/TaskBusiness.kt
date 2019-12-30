@@ -10,4 +10,8 @@ class TaskBusiness(context: Context) {
     fun getList(userId : Int) : MutableList<TaskEntity>{
         return  mTaskRepository.getList(userId)
     }
+
+    fun insert(taskEntity: TaskEntity){
+        return mTaskRepository.insert(taskEntity)
+    }
 }
