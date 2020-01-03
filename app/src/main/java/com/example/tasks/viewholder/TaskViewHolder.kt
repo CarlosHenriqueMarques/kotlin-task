@@ -1,16 +1,27 @@
 package com.example.tasks.viewholder
 
 import android.view.View
-import android.widget.TextView
+
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tasks.R
+
 import com.example.tasks.entities.TaskEntity
+import kotlinx.android.synthetic.main.activity_task_form.view.*
+import kotlinx.android.synthetic.main.row_task_list.view.*
 
 class TaskViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
-    private val mTaskDescription : TextView = itemView.findViewById(R.id.textDescription)
     fun bindData(task : TaskEntity){
-        mTaskDescription.text = task.description
+        itemView.textDescription.text = task.description
+        itemView.textPriority.text = ""
+        itemView.textDueDate.text = task.dueDate
+
+        if(task.complete){
+            itemView.imageTask.setImageResource(R.drawable.ic_done)
+        }else{
+            itemView.imageTask.setImageResource(R.drawable.ic_todo)
+        }
+
     }
 
 }
