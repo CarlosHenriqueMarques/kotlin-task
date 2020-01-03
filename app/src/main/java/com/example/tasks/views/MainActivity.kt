@@ -14,7 +14,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.tasks.R
+import com.example.tasks.business.PriorityBusiness
 import com.example.tasks.constants.TaskConstants
+import com.example.tasks.repository.PriorityCacheConstants
 import com.example.tasks.util.SecurityPreferences
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var mSecurityPreferences: SecurityPreferences
+    private lateinit var mPriorityBussiness : PriorityBusiness
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +51,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navView.setupWithNavController(navController)
 
         mSecurityPreferences = SecurityPreferences(this)
+        mPriorityBussiness = PriorityBusiness(this)
+
+        loadPriorityCache()
         setNavigationViewListener()
 
         startDefaultFragment()
+    }
+
+    private fun loadPriorityCache() {
+        PriorityCacheConstants.setCache(mPriorityBussiness.getList())
     }
 
     private fun setNavigationViewListener() {
