@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_task_list.view.*
 
 class TaskListFragment : Fragment() {
     private lateinit var mContext: Context
-    //private lateinit var mRecyclerTaskList : RecyclerView
+    private lateinit var mRecyclerTaskList : RecyclerView
     private lateinit var mTaskBussines : TaskBusiness
     private lateinit var mSecurityPreferences : SecurityPreferences
 
@@ -40,45 +40,27 @@ class TaskListFragment : Fragment() {
            startActivity(intent)
         }
 
+        mRecyclerTaskList = view.findViewById(R.id.recycleTask)
+        mRecyclerTaskList.adapter = TaskListAdapter(mutableListOf())
+        view.recycleTask.layoutManager = LinearLayoutManager(mContext)
 
 
+        //view.recycleTask.layoutManager = LinearLayoutManager(mContext)
+
+        return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadTask()
+    }
+
+    private fun loadTask() {
         val userId = mSecurityPreferences.getStoreString(TaskConstants.KEY.USER_ID)?.toInt()
         if(userId != null){
             val taskList = mTaskBussines.getList(userId)
-
-            var mockList : MutableList<TaskEntity> = mutableListOf()
-            var mock = TaskEntity(1,1,1,"Teste","23/06/2019",true)
-            mockList.add(mock)
-            mockList.add(mock)
-            mockList.add(mock)
-            mockList.add(mock)
-            mockList.add(mock)
-            mockList.add(mock)
-            mockList.add(mock)
-
-            /*for(i in 0..50){
-                taskList.add(taskList[0].copy(description = "Descrição $i"))
-            }*/
-            view.recycleTask.adapter = TaskListAdapter(mockList)
+            mRecyclerTaskList.adapter = TaskListAdapter(taskList)
         }
-
-        view.recycleTask.layoutManager = LinearLayoutManager(mContext)
-
-        return view
-        /*
-             return inflater.inflate(R.layout.fragment_setup, container, false)
-
-        val view: View = inflater!!.inflate(R.layout.fragment_setup, container, false)
-
-        btnSetup.setOnClickListener { view ->
-            Log.d("btnSetup", "Selected")
-        }
-
-        // Return the fragment view/layout
-        return view
-
-
-         */
     }
 
     companion object {

@@ -37,13 +37,14 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         loadPriorities()
 
 
-        /*buttonDate.setOnClickListener {
+        buttonDate.setOnClickListener {
             openCalendar()
         }
 
-        buttonSave.setOnClickListener {
+        buttonTask.setOnClickListener {
             handleSave()
-        }*/
+        }
+
     }
 
     private fun handleSave() {
@@ -55,6 +56,7 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             val userId = mSecuretyPreferences.getStoreString(TaskConstants.KEY.USER_ID)?.toInt()
             val taskEntity = TaskEntity(0,userId,priorityId,descriptionText,duedate,complete)
             mBussinesTasks.insert(taskEntity)
+            finish()
 
         }catch (ex : Exception){
             Toast.makeText(this, getString(R.string.erro_inesperado), Toast.LENGTH_LONG).show()
