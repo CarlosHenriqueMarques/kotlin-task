@@ -56,11 +56,7 @@ class TaskListFragment : Fragment() {
     }
 
     private fun loadTask() {
-        val userId = mSecurityPreferences.getStoreString(TaskConstants.KEY.USER_ID)?.toInt()
-        if(userId != null){
-            val taskList = mTaskBussines.getList(userId)
-            mRecyclerTaskList.adapter = TaskListAdapter(taskList)
-        }
+        mRecyclerTaskList.adapter = TaskListAdapter(mTaskBussines.getList())
     }
 
     companion object {
