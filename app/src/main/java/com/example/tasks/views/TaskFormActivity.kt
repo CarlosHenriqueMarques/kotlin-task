@@ -26,6 +26,7 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     private val mSimpleDateFormat : SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
     private var mLstPrioritiesEntity : MutableList<PriorityEntity> = mutableListOf()
     private var mLstPrioritiesId : MutableList<Int> = mutableListOf()
+    private var mTaskId : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +36,7 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         mBussinesPriority = PriorityBusiness(this)
         mBussinesTasks = TaskBusiness(this)
         loadPriorities()
-
+        loadDateFromActivity()
 
         buttonDate.setOnClickListener {
             openCalendar()
@@ -45,6 +46,22 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             handleSave()
         }
 
+    }
+
+    private fun loadDateFromActivity() {
+        val bundle = intent.extras
+        if(bundle != null){
+            mTaskId =  bundle.getInt(TaskConstants.BUNDLE.TASKID)
+            val task = mBussinesTasks.get(mTaskId)
+            if(task != null){
+                editDescription.setText(task.description)
+                buttonDate.text = task.dueDate
+                checkComplete.isChecked = task.complete
+                spinnerPriority.setSelection(getIndex(task.priorityId))
+            }
+
+
+        }
     }
 
     private fun handleSave() {
@@ -79,6 +96,16 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         buttonDate.text = mSimpleDateFormat.format(calendar.time)
     }
 
+    private fun getIndex(id : Int): Int {
+        var index = 0
+        for (i in 0..mLstPrioritiesEntity.size){
+            if(mLstPrioritiesEntity[i].id == id){
+                var index = i
+                break
+            }
+        }
+        return index
+    }
     private fun loadPriorities() {
         mLstPrioritiesEntity = mBussinesPriority.getList()
 

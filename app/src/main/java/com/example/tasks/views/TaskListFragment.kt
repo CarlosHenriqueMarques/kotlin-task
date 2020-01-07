@@ -13,6 +13,7 @@ import com.example.tasks.R
 import com.example.tasks.adapter.TaskListAdapter
 import com.example.tasks.business.TaskBusiness
 import com.example.tasks.constants.TaskConstants
+import com.example.tasks.entities.OnTaskListFragmentInteractionListener
 import com.example.tasks.util.SecurityPreferences
 import kotlinx.android.synthetic.main.fragment_task_list.view.*
 
@@ -23,6 +24,8 @@ class TaskListFragment : Fragment() {
     private lateinit var mTaskBussines : TaskBusiness
     private lateinit var mSecurityPreferences : SecurityPreferences
     private var mTaskFilter: Int = 0
+    private lateinit var mListener : OnTaskListFragmentInteractionListener
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if(arguments != null){
@@ -37,13 +40,24 @@ class TaskListFragment : Fragment() {
         mTaskBussines = TaskBusiness(mContext)
         mSecurityPreferences = SecurityPreferences(mContext)
 
+       //Edição de tarefa
+        mListener = object : OnTaskListFragmentInteractionListener {
+            override fun onClick(taskId: Int) {
+                val bundle = Bundle()
+                bundle.putInt(TaskConstants.BUNDLE.TASKID,taskId)
+                val intent = Intent(activity, TaskFormActivity::class.java)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+        }
+
         view.floatAddTask.setOnClickListener {
             val intent = Intent(activity, TaskFormActivity::class.java)
            startActivity(intent)
         }
 
         mRecyclerTaskList = view.findViewById(R.id.recycleTask)
-        mRecyclerTaskList.adapter = TaskListAdapter(mutableListOf())
+        mRecyclerTaskList.adapter = TaskListAdapter(mutableListOf(),mListener)
         view.recycleTask.layoutManager = LinearLayoutManager(mContext)
 
         return view
@@ -55,7 +69,7 @@ class TaskListFragment : Fragment() {
     }
 
     private fun loadTask() {
-        mRecyclerTaskList.adapter = TaskListAdapter(mTaskBussines.getList(mTaskFilter))
+        mRecyclerTaskList.adapter = TaskListAdapter(mTaskBussines.getList(mTaskFilter),mListener)
     }
 
     companion object {

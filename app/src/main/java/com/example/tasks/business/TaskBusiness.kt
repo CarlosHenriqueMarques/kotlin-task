@@ -26,4 +26,6 @@ class TaskBusiness(context: Context) {
     fun insert(taskEntity: TaskEntity){
         return mTaskRepository.insert(taskEntity)
     }
+
+    fun get(id : Int) = mTaskRepository.get(id)
 }

@@ -36,7 +36,7 @@ class TaskRepository private constructor(context: Context){
 
             val selection = "${DataBaseConstant.TASK.COLUMNS.ID} = ?"
             val selectionArgs = arrayOf(id.toString())
-            cursor = db.query(DataBaseConstant.USER.TABLE_NAME,projection,selection,selectionArgs,null,null,null)
+            cursor = db.query(DataBaseConstant.TASK.TABLE_NAME,projection,selection,selectionArgs,null,null,null)
 
             if(cursor.count > 0){
                 //Pega primeira linha
