@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        mSecurityPreferences = SecurityPreferences(this)
+        mPriorityBussiness = PriorityBusiness(this)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -43,15 +45,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
-                R.id.nav_todo,
-                R.id.nav_logout
+                R.id.nav_todo_menu,
+                R.id.nav_logout_menu
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        mSecurityPreferences = SecurityPreferences(this)
-        mPriorityBussiness = PriorityBusiness(this)
 
         loadPriorityCache()
         setNavigationViewListener()
@@ -97,11 +96,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
         var fragment : Fragment? = null
         val id = menu.itemId
-        if(id == R.id.nav_home){
-            fragment = TaskListFragment.newInstance()
-        }else if (id == R.id.nav_todo){
-            fragment = TaskListFragment.newInstance()
-        }else if(id == R.id.nav_logout){
+        if(id == R.id.nav_done_menu){
+            fragment = TaskListFragment.newInstance(TaskConstants.TASKFILTER.COMPLETE)
+        }else if (id == R.id.nav_todo_menu){
+            fragment = TaskListFragment.newInstance(TaskConstants.TASKFILTER.TODO)
+        }else if(id == R.id.nav_logout_menu){
             handleLogout()
         }
 
@@ -113,7 +112,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun startDefaultFragment() {
-        val fragment : Fragment = TaskListFragment.newInstance()
+        val fragment : Fragment = TaskListFragment.newInstance(TaskConstants.TASKFILTER.TODO)
         supportFragmentManager.beginTransaction().replace(R.id.frameContent, fragment).commit()
     }
 

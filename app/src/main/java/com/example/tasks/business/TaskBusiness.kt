@@ -8,16 +8,18 @@ import com.example.tasks.util.SecurityPreferences
 
 class TaskBusiness(context: Context) {
     private val mTaskRepository : TaskRepository = TaskRepository.getInstance(context)
-    private lateinit var mSecurityPreferences : SecurityPreferences
-    fun getList() : MutableList<TaskEntity>{
+    private var mSecurityPreferences: SecurityPreferences = SecurityPreferences(context)
 
-        val userId = mSecurityPreferences.getStoreString(TaskConstants.KEY.USER_ID)?.toInt()
+    fun getList(mTaskFilter: Int): MutableList<TaskEntity>{
 
-        if(userId != null){
+        val userId = mSecurityPreferences.getStoreString(TaskConstants.KEY.USER_ID).toInt()
+        return  mTaskRepository.getList(userId, mTaskFilter)
+
+        /*if(userId != null){
             return  mTaskRepository.getList(userId)
         }else{
             return mutableListOf()
-        }
+        }*/
 
     }
 

@@ -13,7 +13,6 @@ import com.example.tasks.R
 import com.example.tasks.adapter.TaskListAdapter
 import com.example.tasks.business.TaskBusiness
 import com.example.tasks.constants.TaskConstants
-import com.example.tasks.entities.TaskEntity
 import com.example.tasks.util.SecurityPreferences
 import kotlinx.android.synthetic.main.fragment_task_list.view.*
 
@@ -23,9 +22,12 @@ class TaskListFragment : Fragment() {
     private lateinit var mRecyclerTaskList : RecyclerView
     private lateinit var mTaskBussines : TaskBusiness
     private lateinit var mSecurityPreferences : SecurityPreferences
-
+    private var mTaskFilter: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if(arguments != null){
+            mTaskFilter = arguments!!.getInt(TaskConstants.TASKFILTER.KEY)
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
@@ -44,9 +46,6 @@ class TaskListFragment : Fragment() {
         mRecyclerTaskList.adapter = TaskListAdapter(mutableListOf())
         view.recycleTask.layoutManager = LinearLayoutManager(mContext)
 
-
-        //view.recycleTask.layoutManager = LinearLayoutManager(mContext)
-
         return view
     }
 
@@ -56,12 +55,16 @@ class TaskListFragment : Fragment() {
     }
 
     private fun loadTask() {
-        mRecyclerTaskList.adapter = TaskListAdapter(mTaskBussines.getList())
+        mRecyclerTaskList.adapter = TaskListAdapter(mTaskBussines.getList(mTaskFilter))
     }
 
     companion object {
-        fun newInstance() : TaskListFragment {
-            return TaskListFragment()
+        fun newInstance(taskFilter : Int) : TaskListFragment {
+            val args = Bundle()
+            args.putInt(TaskConstants.TASKFILTER.KEY,taskFilter)
+            val fragment = TaskListFragment()
+            fragment.arguments = args
+            return fragment
         }
     }
 }
