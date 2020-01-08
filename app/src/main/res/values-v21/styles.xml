@@ -5,4 +5,12 @@
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+    <style name="mWhiteEditText" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:textColorHint">#ffffff</item>
+        <item name="android:textSize">@dimen/mainTextSize</item>
+        <item name="android:backgroundTint">#ffffff</item>
+    </style>
+
 </resources>

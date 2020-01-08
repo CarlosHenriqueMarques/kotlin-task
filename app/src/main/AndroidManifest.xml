@@ -15,14 +15,16 @@
         <activity android:name=".views.TaskFormActivity">
 
         </activity>
-        <activity android:name=".views.LoginActivity">
+        <activity
+            android:name=".views.LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.RegisterActivity" >
+        <activity android:name=".views.RegisterActivity">
 
         </activity>
         <activity
