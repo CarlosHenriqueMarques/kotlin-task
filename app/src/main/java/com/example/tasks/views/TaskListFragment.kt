@@ -56,6 +56,16 @@ class TaskListFragment : Fragment() {
                 loadTask()
                 Toast.makeText(mContext,getString(R.string.delete_task),Toast.LENGTH_LONG).show()
             }
+
+            override fun onUncompleteClick(id: Int) {
+                mTaskBussines.complete(id,false)
+                loadTask()
+            }
+
+            override fun onCompleteClick(id: Int) {
+                mTaskBussines.complete(id, true)
+                loadTask()
+            }
         }
 
         view.floatAddTask.setOnClickListener {

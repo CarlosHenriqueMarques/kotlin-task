@@ -6,4 +6,4 @@ data class TaskEntity(
     val priorityId: Int,
     var description: String,
     var dueDate: String,
-    val complete: Boolean)
+    var complete: Boolean)

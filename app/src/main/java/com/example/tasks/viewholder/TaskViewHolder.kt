@@ -38,12 +38,20 @@ class TaskViewHolder(itemView : View,val context: Context, val listener : OnTask
 
             true
         }
+
+        itemView.imageTask.setOnClickListener {
+            if(task.complete){
+                listener.onUncompleteClick(task.id)
+            }else{
+                listener.onCompleteClick(task.id)
+            }
+        }
     }
 
     private fun showConfirmationDialog(task: TaskEntity) {
         //listener.onDeleteClick(task.id)
         AlertDialog.Builder(context)
-            .setTitle("Remoção da tarefa")
+            .setTitle(context.getString(R.string.title_delete_task))
             .setMessage("Deseja realmente remover a tarefa ${task.description} ?")
             .setIcon(R.drawable.ic_delete_task)
             .setPositiveButton("Remover") { dialog, i -> listener.onDeleteClick(task.id)  }
@@ -60,5 +68,3 @@ private class handleRemoval(val listener: OnTaskListFragmentInteractionListener,
         listener.onDeleteClick(taskId)
 }
  */
-
-
