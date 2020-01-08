@@ -3,9 +3,12 @@ package com.example.tasks.views
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.TextureView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -20,6 +23,9 @@ import com.example.tasks.repository.PriorityCacheConstants
 import com.example.tasks.util.SecurityPreferences
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.nav_header_main.*
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -33,6 +39,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         mSecurityPreferences = SecurityPreferences(this)
         mPriorityBussiness = PriorityBusiness(this)
@@ -54,7 +61,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         loadPriorityCache()
         setNavigationViewListener()
-
+        formatUserName()
+        formatDate()
         startDefaultFragment()
     }
 
@@ -123,5 +131,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         startActivity(Intent(this,LoginActivity::class.java))
         finish()
+    }
+
+    private fun formatUserName() {
+        val str = "Olá,  ${mSecurityPreferences.getStoreString(TaskConstants.KEY.USER_NAME)}!"
+        txtHello.text = str
+
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        val header = navigationView.getHeaderView(0)
+
+        val name = header.findViewById<TextView>(R.id.txtName)
+        val email = header.findViewById<TextView>(R.id.textEmail)
+
+        name.text = mSecurityPreferences.getStoreString(TaskConstants.KEY.USER_NAME)
+        email.text =  mSecurityPreferences.getStoreString(TaskConstants.KEY.USER_EMAIL)
+
+    }
+
+    private fun formatDate() {
+        val c = Calendar.getInstance()
+        val days = arrayListOf("Domingo", "Segunda-feira", "Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado")
+        val months = arrayListOf("Janeiro", "Fevereiro", "Março","Abril","Maio","Junho","Julho","Agosto","Setembro", "Outubro","Novembro","Dezembro")
+
+        val str = "${days[c.get(Calendar.DAY_OF_WEEK) -1 ]}, ${c.get(Calendar.DAY_OF_MONTH)} de ${months[c.get(Calendar.MONTH)]} "
+        txtDateDescription.text = str
     }
 }
