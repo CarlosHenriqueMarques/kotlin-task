@@ -71,8 +71,16 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             val complete = checkComplete.isChecked
             val duedate = buttonDate.text.toString()
             val userId = mSecuretyPreferences.getStoreString(TaskConstants.KEY.USER_ID)?.toInt()
-            val taskEntity = TaskEntity(0,userId,priorityId,descriptionText,duedate,complete)
-            mBussinesTasks.insert(taskEntity)
+            val taskEntity = TaskEntity(mTaskId,userId,priorityId,descriptionText,duedate,complete)
+
+            if(mTaskId == 0){
+                mBussinesTasks.insert(taskEntity)
+                Toast.makeText(this,getString(R.string.insert_task_sucess), Toast.LENGTH_LONG).show()
+            }else{
+                mBussinesTasks.update(taskEntity)
+                Toast.makeText(this,getString(R.string.update_task_sucess), Toast.LENGTH_LONG).show()
+            }
+
             finish()
 
         }catch (ex : Exception){

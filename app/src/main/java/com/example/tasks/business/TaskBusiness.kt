@@ -27,5 +27,9 @@ class TaskBusiness(context: Context) {
         return mTaskRepository.insert(taskEntity)
     }
 
+    fun update(taskEntity: TaskEntity){
+        return mTaskRepository.update(taskEntity)
+    }
+
     fun get(id : Int) = mTaskRepository.get(id)
 }
