@@ -14,7 +14,7 @@ class TaskListAdapter(val taskList : List<TaskEntity>, val listener : OnTaskList
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.row_task_list, parent, false)
-        return TaskViewHolder(view,listener)
+        return TaskViewHolder(view,context,listener)
     }
 
     override fun getItemCount(): Int {

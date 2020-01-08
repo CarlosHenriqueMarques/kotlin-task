@@ -28,4 +28,5 @@
     <string name="description">Descrição</string>
     <string name="insert_task_sucess">Tarefa inserida com sucesso !!</string>
     <string name="update_task_sucess">Tarefa alterada com sucesso !!</string>
+    <string name="delete_task">Tarefa removida com sucesso</string>
 </resources>

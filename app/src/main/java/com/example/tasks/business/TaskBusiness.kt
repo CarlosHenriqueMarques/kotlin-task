@@ -32,4 +32,6 @@ class TaskBusiness(context: Context) {
     }
 
     fun get(id : Int) = mTaskRepository.get(id)
+
+    fun delete(id : Int) = mTaskRepository.delete(id)
 }

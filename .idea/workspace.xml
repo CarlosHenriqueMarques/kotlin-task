@@ -10,8 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed411395-c048-4499-b5d5-73ded156f8d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/adapter/TaskListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/adapter/TaskListAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/business/TaskBusiness.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/business/TaskBusiness.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskFormActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskFormActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/entities/OnTaskListFragmentInteractionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/entities/OnTaskListFragmentInteractionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/repository/TaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/repository/TaskRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskListFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,33 +56,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskListFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="395">
+              <caret line="56" column="71" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
               <folding>
                 <element signature="e#33#709#0" expanded="true" />
+                <element signature="e#2268#2299#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskFormActivity.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="437">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
               <folding>
-                <element signature="e#2924#2962#1" expanded="true" />
-                <element signature="e#3095#3133#1" expanded="true" />
+                <element signature="e#38#407#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/repository/TaskRepository.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="28" column="70" lean-forward="true" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -85,17 +81,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/adapter/TaskListAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+            <state relative-caret-position="153">
+              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/repository/TaskRepository.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="13" column="90" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="90" />
+            <state relative-caret-position="283">
+              <caret line="111" column="49" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -103,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/business/TaskBusiness.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+            <state relative-caret-position="488">
+              <caret line="35" column="14" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -146,6 +142,7 @@
       <find>starA</find>
       <find>getIndex</find>
       <find>adap</find>
+      <find>c</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,14 +182,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/util/SecurityPreferences.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/entities/OnTaskListFragmentInteractionListener.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/constants/TaskConstants.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskListFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/adapter/TaskListAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskFormActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/entities/OnTaskListFragmentInteractionListener.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/repository/TaskRepository.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/business/TaskBusiness.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskFormActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskListFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/adapter/TaskListAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt" />
       </list>
     </option>
   </component>
@@ -207,7 +204,72 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kotlin-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="viewholder" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
@@ -739,31 +801,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/entities/OnTaskListFragmentInteractionListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/constants/TaskConstants.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="90" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/adapter/TaskListAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -778,30 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskListFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="e#33#709#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/repository/TaskRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="70" lean-forward="true" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/business/TaskBusiness.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskFormActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="499">
@@ -809,6 +826,55 @@
           <folding>
             <element signature="e#2924#2962#1" expanded="true" />
             <element signature="e#3095#3133#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/entities/OnTaskListFragmentInteractionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/repository/TaskRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="111" column="49" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/business/TaskBusiness.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/views/TaskListFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="56" column="71" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
+          <folding>
+            <element signature="e#33#709#0" expanded="true" />
+            <element signature="e#2268#2299#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/adapter/TaskListAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tasks/viewholder/TaskViewHolder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#38#407#0" expanded="true" />
           </folding>
         </state>
       </provider>
