@@ -30,4 +30,6 @@
     <string name="update_task_sucess">Tarefa alterada com sucesso !!</string>
     <string name="delete_task">Tarefa removida com sucesso</string>
     <string name="title_delete_task">Remoção da tarefa</string>
+    <string name="adicionar_tarefa">Adicionar Tarefa</string>
+    <string name="atualizar_task">Atualizar tarefa</string>
 </resources>

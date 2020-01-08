@@ -53,11 +53,13 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         if(bundle != null){
             mTaskId =  bundle.getInt(TaskConstants.BUNDLE.TASKID)
             val task = mBussinesTasks.get(mTaskId)
+
             if(task != null){
                 editDescription.setText(task.description)
                 buttonDate.text = task.dueDate
                 checkComplete.isChecked = task.complete
                 spinnerPriority.setSelection(getIndex(task.priorityId))
+                buttonTask.text = getString(R.string.atualizar_task)
             }
 
 
