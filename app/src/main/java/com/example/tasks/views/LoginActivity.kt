@@ -25,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
             handleLogin()
         }
 
+        textRegister.setOnClickListener {
+            startActivity(Intent(this,RegisterActivity::class.java))
+        }
+
         verifyLoggedUser()
     }
 

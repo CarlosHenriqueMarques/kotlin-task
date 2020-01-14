@@ -98,7 +98,7 @@
         app:layout_constraintGuide_end="82dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textRegister"
         style="@style/mWhiteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

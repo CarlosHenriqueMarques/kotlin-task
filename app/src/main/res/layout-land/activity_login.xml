@@ -95,7 +95,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textRegister"
         style="@style/mWhiteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
