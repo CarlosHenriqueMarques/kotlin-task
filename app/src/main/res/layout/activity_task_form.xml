@@ -4,65 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".views.TaskFormActivity">
 
     <EditText
         android:id="@+id/editDescription"
+        style="@style/mGrayEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/description"
+        android:lines="2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
+        android:paddingLeft="25dp"
+        android:text="@string/text_priority"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
 
     <Spinner
         android:id="@+id/spinnerPriority"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDescription"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ececec"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerPriority"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/checkComplete"
+        style="@style/mGrayTextView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginTop="24dp"
+        android:button="@drawable/checkbox_selector"
+        android:paddingLeft="10dp"
         android:text="Completa"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerPriority"/>
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="32dp"
+        android:background="#ececec"
+        app:layout_constraintBottom_toBottomOf="@+id/checkComplete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonDate"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
         android:text="Selecione a data"
+        android:textColor="@color/colorGrayText"
+        android:textColorHint="@color/colorGrayText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkComplete"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="32dp"
+        android:background="#ececec"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonTask"
+        style="@style/mDefaultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/adicionar_tarefa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDate"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        />
+        android:text="@string/adicionar_tarefa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
