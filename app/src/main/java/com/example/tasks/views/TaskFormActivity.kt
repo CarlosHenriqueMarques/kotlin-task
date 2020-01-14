@@ -3,6 +3,7 @@ package com.example.tasks.views
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
 import android.widget.Toast
@@ -46,6 +47,17 @@ class TaskFormActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             handleSave()
         }
 
+        setupToolbar()
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        finish()
+        return true
+    }
+
+    private fun setupToolbar() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun loadDateFromActivity() {
